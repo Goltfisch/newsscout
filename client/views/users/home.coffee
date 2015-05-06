@@ -34,8 +34,25 @@ Template.home.helpers
       sort:
         name: 1
 
+  news: ->
+    News.find {}
+    ,
+      sort:
+        updatedAt: -1
+
+  getHostnameFromUrl: (url) ->
+    parser = document.createElement('a')
+    parser.href = url
+    parser.hostname.replace('www.', '')
+
 Template.home.onCreated ->
   self = @
 
   self.autorun ->
+    tags = []
+    if Tags?
+      Tags.find().forEach (tag) ->
+        tags.push tag.name
+
     self.tagsSubscriptionHandle = Meteor.subscribe 'tags'
+    self.newsSubscriptionHandle = Meteor.subscribe 'news', tags
