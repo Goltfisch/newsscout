@@ -13,6 +13,8 @@ i18n.map 'de',
   addTagInfo: 'Schlagwort, über das Sie Informationen lesen möchten eingeben und Enter drücken'
   notSignedIn: 'Sie müssen eingeloggt sein um fortzufahren'
   tagIsBlank: 'Schlagwort darf nicht leer sein'
+  removeTagConfirmation: 'Wollen Sie dieses Schlagwort wirklich löschen?'
+  missingPermission: 'Sie haben nicht die nötigen Berechtigungen diese Aktion durchzuführen'
   imprint: 'Impressum'
   privacy: 'Datenschutz'
   termsOfService: 'Nutzungsbedingungen'

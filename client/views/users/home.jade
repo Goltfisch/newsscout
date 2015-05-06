@@ -13,3 +13,5 @@ template(name='home')
         ul.tag-list
           each tags
             li {{name}}
+              button.icon(data-id='remove-tag' data-document-id='{{_id}}')
+                i.fa.fa-trash-o

@@ -13,6 +13,8 @@ i18n.map 'en',
   addTagInfo: 'Insert tag you are interested in and press enter'
   notSignedIn: 'You need to be signed in to proceed'
   tagIsBlank: 'Tag should not be blank'
+  removeTagConfirmation: 'Do you really want to delete this tag?'
+  missingPermission: 'You have no permissions to proceed'
   imprint: 'Imprint'
   privacy: 'Privacy'
   termsOfService: 'Terms of service'
