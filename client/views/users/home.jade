@@ -3,3 +3,13 @@ template(name='home')
     .twelve.columns
       button.icon.u-pull-right(data-id='sign-out')
         i.fa.fa-power-off
+  .row
+    .twelve.columns
+      form(data-id='add-tag-form')
+        input.u-full-width(type='text' placeholder="{{i18n 'addTagInfo'}}" data-id='tag')
+  .row
+    .twelve.columns
+      if tags.count
+        ul.tag-list
+          each tags
+            li {{name}}
