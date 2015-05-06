@@ -1,0 +1,14 @@
+template(name='signUp')
+  .row
+    .four.columns.offset-by-four
+      form(data-id='sign-up-form')
+        h1 {{i18n 'signUp'}}
+        label(for='email') {{i18n 'email'}}
+        input.u-full-width(type='email' placeholder="{{i18n 'email'}}" data-id='email')
+        label(for='password') {{i18n 'password'}}
+        input.u-full-width(type='password' placeholder="{{i18n 'password'}}" data-id='password')
+        label(for='password-confirmation') {{i18n 'passwordConfirmation'}}
+        input.u-full-width(type='password' placeholder="{{i18n 'passwordConfirmation'}}" data-id='password-confirmation')
+        input.button-primary.u-full-width(type='submit' value="{{i18n 'signUp'}}")
+      hr
+      a.button.u-full-width(href="{{pathFor 'sign_in'}}") {{i18n 'signIn'}}

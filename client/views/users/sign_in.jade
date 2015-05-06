@@ -1,0 +1,12 @@
+template(name='signIn')
+  .row
+    .four.columns.offset-by-four
+      form(data-id='sign-in-form')
+        h1 {{i18n 'signIn'}}
+        label(for='email') {{i18n 'email'}}
+        input.u-full-width(type='email' placeholder="{{i18n 'email'}}" data-id='email')
+        label(for='password') {{i18n 'password'}}
+        input.u-full-width(type='password' placeholder="{{i18n 'password'}}" data-id='password')
+        input.button-primary.u-full-width(type='submit' value="{{i18n 'signIn'}}")
+      hr
+      a.button.u-full-width(href="{{pathFor 'sign_up'}}") {{i18n 'signUp'}}
