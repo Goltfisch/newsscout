@@ -15,6 +15,18 @@ Template.home.events
       else
         template.find('[data-id=tag]').value = ''
 
+  'mouseenter ul.tag-list > li': (event, template) ->
+    $('[data-document-id=' + @_id + ']').show()
+
+  'mouseleave ul.tag-list > li': (event, template) ->
+    $('[data-document-id=' + @_id + ']').hide()
+
+  'click [data-id=remove-tag]': (event, template) ->
+    if confirm i18n 'removeTagConfirmation'
+      Meteor.call 'removeTag', @, (error) ->
+        if error
+          sAlert.error i18n error.reason
+
 Template.home.helpers
   tags: ->
     Tags.find {}
