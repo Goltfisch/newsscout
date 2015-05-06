@@ -7,3 +7,14 @@ Meteor.publish 'tags', ->
         name: 1
   else
     []
+
+Meteor.publish 'news', (tags) ->
+  if @userId
+    News.find
+      tags:
+        $in: tags
+    ,
+      sort:
+        updatedAt: -1
+  else
+    []

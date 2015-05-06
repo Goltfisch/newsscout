@@ -5,6 +5,9 @@ template(name='home')
         i.fa.fa-power-off
   .row
     .twelve.columns
+      h1.centered-text News Scout
+  .row
+    .twelve.columns
       form(data-id='add-tag-form')
         input.u-full-width(type='text' placeholder="{{i18n 'addTagInfo'}}" data-id='tag')
   .row
@@ -15,3 +18,20 @@ template(name='home')
             li {{name}}
               button.icon(data-id='remove-tag' data-document-id='{{_id}}')
                 i.fa.fa-trash-o
+  .row
+    .twelve.columns
+      if news.count
+        hr
+        each news
+          .row
+            .twelve.columns.news
+              .row.title
+                .twelve.columns
+                  a(href='{{url}}' target='_blank') {{{title}}}
+              hr
+              .row.crawling-information
+                .six.columns
+                  i.fa.fa-globe
+                  a(href='http://{{getHostnameFromUrl url}}' target='_blank') {{getHostnameFromUrl url}}
+                .six.columns
+                  a.u-pull-right(href='{{source.url}}' target='_blank') {{source.name}} ({{getCurrentDate}})
