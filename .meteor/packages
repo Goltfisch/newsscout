@@ -20,3 +20,8 @@ arillo:flow-router-helpers
 fortawesome:fontawesome
 matb33:collection-hooks
 jquery
+percolate:synced-cron
+http
+sha
+momentjs:moment
+rzymek:moment-locale-de
