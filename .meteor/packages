@@ -8,3 +8,12 @@ meteor-platform
 coffeescript
 less
 mquandalle:jade
+accounts-base
+accounts-password
+skeleton:skeleton
+meteorhacks:flow-router
+meteorhacks:flow-layout
+juliancwirko:s-alert
+juliancwirko:s-alert-scale
+anti:i18n
+arillo:flow-router-helpers
