@@ -17,6 +17,11 @@ FlowRouter.route '/sign_up',
     setTitle i18n 'signUp'
     FlowLayout.render 'layout', main: 'signUp'
 
+FlowRouter.route '/sign_out',
+  action: ->
+    Meteor.logout ->
+      FlowRouter.go '/sign_in'
+
 # check user permissions
 if Meteor.isClient
   Tracker.autorun ->

@@ -1,8 +1,4 @@
 Template.home.events
-  'click [data-id=sign-out]': (event, template) ->
-    Meteor.logout ->
-      FlowRouter.go '/sign_in'
-
   'submit [data-id=add-tag-form]': (event, template) ->
     event.preventDefault()
 
