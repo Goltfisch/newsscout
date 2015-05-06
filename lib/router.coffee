@@ -5,7 +5,7 @@ FlowRouter.notfound =
 FlowRouter.route '/',
   action: ->
     setTitle i18n 'home'
-    FlowLayout.render 'layout', main: 'index'
+    FlowLayout.render 'layout', main: 'home'
 
 FlowRouter.route '/sign_in',
   action: ->
