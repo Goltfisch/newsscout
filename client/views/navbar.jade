@@ -1,0 +1,10 @@
+template(name='navbar')
+  nav.navbar
+    .container
+      ul
+        li
+          a(href='/') News Scout
+        if currentUser
+          li.u-pull-right
+            a(href="{{pathFor 'sign_out'}}")
+              i.fa.fa-power-off.fa-lg
