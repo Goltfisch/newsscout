@@ -4,16 +4,31 @@ form {
   }
 }
 
-ul.tag-list {
+ul.tags {
   list-style: none;
   li {
     float: left;
-    margin-right: 10px;
-    border: 1px solid #D1D1D1;
-    padding: 10px;
-    button {
-      margin: 0;
-      display: none;
+    .checkbox {
+      float: left;
+      margin: 0 20px 0 0;
+      label {
+        margin-bottom: 0;
+        cursor: pointer;
+        input {
+          display: none;
+          &:checked + span {
+            background: #EEEEEE;
+          }
+        }
+        span.label-body {
+          border: 1px solid #EEEEEE;
+          padding: 10px;
+          margin-left: 0;
+          button.icon {
+            margin: 0;
+          }
+        }
+      }
     }
   }
 }

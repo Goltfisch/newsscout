@@ -11,17 +11,19 @@ Template.home.events
       else
         template.find('[data-id=tag]').value = ''
 
-  'mouseenter ul.tag-list > li': (event, template) ->
-    $('[data-document-id=' + @_id + ']').show()
-
-  'mouseleave ul.tag-list > li': (event, template) ->
-    $('[data-document-id=' + @_id + ']').hide()
-
   'click [data-id=remove-tag]': (event, template) ->
     if confirm i18n 'removeTagConfirmation'
       Meteor.call 'removeTag', @, (error) ->
         if error
           sAlert.error i18n error.reason
+
+  'click [data-id=tag]': (event, template) ->
+    selectedTagsArray = []
+
+    _.each template.findAll('input:checked'), (tag) ->
+      selectedTagsArray.push tag.value
+
+    template.selectedTags.set(selectedTagsArray)
 
 Template.home.helpers
   tags: ->
@@ -41,7 +43,12 @@ Template.home.helpers
     parser.href = url
     parser.hostname.replace('www.', '')
 
+  tagInSelectedTags: (tag) ->
+    _.contains Template.instance().selectedTags.get(), tag
+
 Template.home.onCreated ->
+  @selectedTags = new ReactiveVar([])
+
   self = @
 
   self.autorun ->
@@ -49,6 +56,8 @@ Template.home.onCreated ->
     if Tags?
       Tags.find().forEach (tag) ->
         tags.push tag.name
+    unless self.selectedTags.get().length is 0
+      tags = self.selectedTags.get()
 
     self.tagsSubscriptionHandle = Meteor.subscribe 'tags'
     self.newsSubscriptionHandle = Meteor.subscribe 'news', tags
