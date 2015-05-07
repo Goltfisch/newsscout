@@ -27,6 +27,6 @@ template(name='home')
                   i.fa.fa-globe
                   a(href='http://{{getHostnameFromUrl url}}' target='_blank') {{getHostnameFromUrl url}}
                 .six.columns
-                  a.u-pull-right(href='{{source.url}}' target='_blank') {{source.name}} ({{getCurrentDate}})
+                  a.u-pull-right(href='http://{{getHostnameFromUrl sourceUrl}}' target='_blank') {{getHostnameFromUrl sourceUrl}} ({{getCurrentDate}})
       else
         .alert.info {{i18n 'noNewsAvailable'}}
