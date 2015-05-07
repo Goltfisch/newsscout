@@ -6,11 +6,15 @@ template(name='home')
   .row
     .twelve.columns
       if tags.count
-        ul.tag-list
+        ul.tags
           each tags
-            li {{name}}
-              button.icon(data-id='remove-tag' data-document-id='{{_id}}')
-                i.fa.fa-trash-o
+            li
+              .checkbox
+                label
+                  input(type='checkbox' name='tags' value='{{name}}' checked='{{tagInSelectedTags name}}' data-id='tag')
+                  span.label-body {{name}}
+                    button.icon(data-id='remove-tag')
+                      i.fa.fa-trash-o
   hr
   .row
     .twelve.columns
