@@ -15,6 +15,7 @@ i18n.map 'en',
   tagIsBlank: 'Tag should not be blank'
   removeTagConfirmation: 'Do you really want to delete this tag?'
   missingPermission: 'You have no permissions to proceed'
+  noNewsAvailable: 'There are currently no news available. Please come back later'
   imprint: 'Imprint'
   privacy: 'Privacy'
   termsOfService: 'Terms of service'
