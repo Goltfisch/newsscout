@@ -11,10 +11,10 @@ template(name='home')
             li {{name}}
               button.icon(data-id='remove-tag' data-document-id='{{_id}}')
                 i.fa.fa-trash-o
+  hr
   .row
     .twelve.columns
       if news.count
-        hr
         each news
           .row
             .twelve.columns.news
@@ -28,3 +28,5 @@ template(name='home')
                   a(href='http://{{getHostnameFromUrl url}}' target='_blank') {{getHostnameFromUrl url}}
                 .six.columns
                   a.u-pull-right(href='{{source.url}}' target='_blank') {{source.name}} ({{getCurrentDate}})
+      else
+        .alert.info {{i18n 'noNewsAvailable'}}
