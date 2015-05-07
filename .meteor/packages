@@ -25,3 +25,5 @@ http
 sha
 momentjs:moment
 rzymek:moment-locale-de
+anonyfox:scrape
+percolate:migrations
