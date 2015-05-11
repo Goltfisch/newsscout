@@ -19,12 +19,11 @@ fetchGoogleNews = ->
     if result.statusCode is 200 and result.data.responseStatus is 200
       _.each result.data.responseData.results, (result) ->
         News.upsert
-          hashedUrl: SHA256(result.unescapedUrl)
+          url: result.unescapedUrl
         ,
           $set:
             title: result.titleNoFormatting
             url: result.unescapedUrl
-            hashedUrl: SHA256(result.unescapedUrl)
             sourceUrl: 'http://news.google.com'
             updatedAt: new Date()
           $addToSet:
@@ -49,12 +48,11 @@ scrapeRSSFeeds = ->
       # normalize all tags
       tags = _.map item.tags, (tag) -> tag.toLowerCase()
       News.upsert
-        hashedUrl: SHA256(item.link)
+        url: item.link
       ,
         $set:
           title: item.title
           url: item.link
-          hashedUrl: SHA256(item.link)
           sourceUrl: feed
           updatedAt: new Date()
         $addToSet:
