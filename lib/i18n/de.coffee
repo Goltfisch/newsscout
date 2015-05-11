@@ -16,6 +16,7 @@ i18n.map 'de',
   removeTagConfirmation: 'Wollen Sie dieses Schlagwort wirklich löschen?'
   missingPermission: 'Sie haben nicht die nötigen Berechtigungen diese Aktion durchzuführen'
   noNewsAvailable: 'Derzeit sind leider keine Neuigkeiten vorhanden. Schauen Sie bitte später erneut vorbei'
+  loadMore: 'Mehr laden'
   imprint: 'Impressum'
   privacy: 'Datenschutz'
   termsOfService: 'Nutzungsbedingungen'

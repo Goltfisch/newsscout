@@ -32,5 +32,7 @@ template(name='home')
                   a(href='http://{{getHostnameFromUrl url}}' target='_blank') {{getHostnameFromUrl url}}
                 .six.columns
                   a.u-pull-right(href='http://{{getHostnameFromUrl sourceUrl}}' target='_blank') {{getHostnameFromUrl sourceUrl}} ({{getCurrentDate}})
+        unless allNewsLoaded
+          button.u-full-width(type='button' data-id='load-more') {{i18n 'loadMore'}}
       else
         .alert.info {{i18n 'noNewsAvailable'}}
