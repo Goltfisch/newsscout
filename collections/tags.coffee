@@ -2,6 +2,7 @@
 
 Meteor.methods
   addTag: (tag) ->
+    check tag, { name: String }
     throw new Meteor.Error(401, 'notSignedIn') unless Meteor.user()
     throw new Meteor.Error(422, 'tagIsBlank') unless tag.name
 
@@ -13,6 +14,7 @@ Meteor.methods
         userId: Meteor.userId()
 
   removeTag: (tag) ->
+    check tag, { _id: String, name: String, createdAt: Date, userId: String }
     throw new Meteor.Error(401, 'notSignedIn') unless Meteor.user()
     throw new Meteor.Error(403, 'missingPermission') unless tag.userId is Meteor.userId()
     throw new Meteor.Error() unless tag._id

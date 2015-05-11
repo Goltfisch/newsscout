@@ -9,6 +9,8 @@ Meteor.publish 'tags', ->
     []
 
 Meteor.publish 'news', (tags, limit) ->
+  check tags, Array
+  check limit, Number
   if @userId
     News.find
       tags:
