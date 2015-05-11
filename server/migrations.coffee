@@ -34,4 +34,15 @@ Meteor.startup ->
           $unset:
             hashedUrl: ''
 
+  # remove sourceUrl-Attribute
+  Migrations.add
+    version: 4
+    up: ->
+      News.find().forEach (news) ->
+        News.update
+          _id: news._id
+        ,
+          $unset:
+            sourceUrl: ''
+
   Migrations.migrateTo('latest');
