@@ -1,14 +1,14 @@
 SyncedCron.add
   name: 'Fetch latest Google News for all stored tags'
   schedule: (parser) ->
-    parser.text 'every 1 hour'
+    parser.text 'every 30 minutes'
   job: ->
     fetchGoogleNews()
 
 SyncedCron.add
   name: 'Scrape RSS-Feeds'
   schedule: (parser) ->
-    parser.text 'every 1 hour'
+    parser.text 'every 30 minutes'
   job: ->
     scrapeRSSFeeds()
 
