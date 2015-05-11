@@ -31,3 +31,5 @@ reactive-var
 meteorhacks:kadira
 okgrow:analytics
 percolate:paginated-subscription
+check
+audit-argument-checks
