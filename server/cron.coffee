@@ -24,7 +24,6 @@ fetchGoogleNews = ->
           $set:
             title: result.titleNoFormatting
             url: result.unescapedUrl
-            sourceUrl: 'http://news.google.com'
             updatedAt: new Date()
           $addToSet:
             tags: tag
@@ -53,7 +52,6 @@ scrapeRSSFeeds = ->
         $set:
           title: item.title
           url: item.link
-          sourceUrl: feed
           updatedAt: new Date()
         $addToSet:
           tags:
