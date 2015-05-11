@@ -17,7 +17,7 @@ Meteor.startup ->
     up: ->
       News.find().forEach (news) ->
         if news.source
-          News.updated
+          News.update
             _id: news._id
           ,
             $unset:
