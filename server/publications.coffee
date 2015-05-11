@@ -8,7 +8,7 @@ Meteor.publish 'tags', ->
   else
     []
 
-Meteor.publish 'news', (tags) ->
+Meteor.publish 'news', (tags, limit) ->
   if @userId
     News.find
       tags:
@@ -16,5 +16,7 @@ Meteor.publish 'news', (tags) ->
     ,
       sort:
         updatedAt: -1
+      limit:
+        limit
   else
     []

@@ -25,6 +25,10 @@ Template.home.events
 
     template.selectedTags.set(selectedTagsArray)
 
+  'click [data-id=load-more]': (event, template) ->
+    event.preventDefault()
+    template.newsSubscriptionHandle.loadNextPage()
+
 Template.home.helpers
   tags: ->
     Tags.find {}
@@ -46,6 +50,10 @@ Template.home.helpers
   tagInSelectedTags: (tag) ->
     _.contains Template.instance().selectedTags.get(), tag
 
+  allNewsLoaded: ->
+    handle = Template.instance().newsSubscriptionHandle
+    News.find().count() < handle.loaded()
+
 Template.home.onCreated ->
   @selectedTags = new ReactiveVar([])
 
@@ -60,4 +68,4 @@ Template.home.onCreated ->
       tags = self.selectedTags.get()
 
     self.tagsSubscriptionHandle = Meteor.subscribe 'tags'
-    self.newsSubscriptionHandle = Meteor.subscribe 'news', tags
+    self.newsSubscriptionHandle = Meteor.subscribeWithPagination 'news', tags, 50
