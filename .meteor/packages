@@ -27,7 +27,6 @@ rzymek:moment-locale-de
 anonyfox:scrape
 percolate:migrations
 reactive-var
-meteorhacks:kadira
 okgrow:analytics
 percolate:paginated-subscription
 check
@@ -35,3 +34,4 @@ audit-argument-checks
 meteorhacks:sikka
 underscore
 browser-policy
+meteorhacks:kadira
