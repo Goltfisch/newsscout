@@ -27,11 +27,9 @@ template(name='home')
                   a(href='{{url}}' target='_blank') {{{title}}}
               hr
               .row.crawling-information
-                .six.columns
+                .twelve.columns
                   i.fa.fa-globe
                   a(href='http://{{getHostnameFromUrl url}}' target='_blank') {{getHostnameFromUrl url}}
-                .six.columns
-                  p.u-pull-right {{getCurrentDate}}
         unless allNewsLoaded
           button.u-full-width(type='button' data-id='load-more') {{i18n 'loadMore'}}
       else
