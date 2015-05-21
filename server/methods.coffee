@@ -11,6 +11,7 @@ Meteor.methods
             $set:
               title: result.titleNoFormatting
               url: result.unescapedUrl
+              updatedAt: new Date()
             $addToSet:
               tags: tag
 
@@ -38,6 +39,7 @@ Meteor.methods
           $set:
             title: item.title
             url: item.link
+            updatedAt: new Date()
           $addToSet:
             tags:
               $each: tags
