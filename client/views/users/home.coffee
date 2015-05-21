@@ -29,6 +29,12 @@ Template.home.events
     event.preventDefault()
     template.newsSubscriptionHandle.loadNextPage()
 
+  'click [data-id=refresh]': (event, template) ->
+    event.preventDefault()
+
+    Meteor.call 'fetchGoogleNews'
+    Meteor.call 'scrapeRSSFeeds'
+
 Template.home.helpers
   tags: ->
     Tags.find {}
