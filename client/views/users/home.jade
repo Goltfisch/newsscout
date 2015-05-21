@@ -15,7 +15,11 @@ template(name='home')
                   span.label-body {{name}}
                     button.icon(data-id='remove-tag')
                       i.fa.fa-trash-o
-  hr
+  hr.news-divider
+  .row
+    .twelve.columns
+      button.refresh-button.u-pull-right(data-id='refresh')
+        i.fa.fa-refresh
   .row
     .twelve.columns
       if news.count
