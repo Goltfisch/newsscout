@@ -22,8 +22,6 @@ matb33:collection-hooks
 jquery
 percolate:synced-cron
 http
-momentjs:moment
-rzymek:moment-locale-de
 anonyfox:scrape
 percolate:migrations
 reactive-var
